@@ -9,7 +9,7 @@
 	--gutter: 30px;
 	--side-small: 26;
 	--side-big: 36;
-	--depth: 4000px;
+	--depth: 4100px;
 	--transition: .75s cubic-bezier(0.075, .5, 0, 1);
 }
 
@@ -61,6 +61,8 @@ body {
 h1, h2, h3, h4 {
 	font-weight: 100;
 	text-transform: uppercase;
+	width: min-content;
+	line-height: 1;
 }
 
 .frame h2 {
@@ -86,4 +88,49 @@ h1, h2, h3, h4 {
 
 .frame_bg {
 	background-color: rgb(0 0 0 / .87);
+}
+
+video.frame-media {
+	width: calc(var(--index) * var(--side-big));
+	height: calc(var(--index) * var(--side-small));
+}
+
+video.frame-media_left {
+	right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+
+video.frame-media_right {
+	left: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+
+.text-right > * {
+	position: relative;
+	left: 18vw;
+}
+
+.text-left > * {
+	position: relative;
+	right: 18vw;
+}
+
+.frame h3 {
+	font-size: calc(var(--index) * 3);
+}
+
+.frame p {
+	max-width: 30vw;
+	margin-top: 5vh;
+}
+
+.sound-btn {
+	position: fixed;
+	bottom: 5vh;
+	right: 5vw;
+	cursor: pointer;
+	width: 24px;
+	transition: .25s ease;
+}
+
+.sound-btn.paused {
+	opacity: .25;
 }
